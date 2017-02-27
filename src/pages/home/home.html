@@ -1,14 +1,22 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="mobi">
     <ion-title>
-      Ionic Blank
+      MBAcam
     </ion-title>
+
+    <ion-buttons right>
+      <button ion-button (click)="presentActionSheet()">
+        Select a image
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="card-background-page">
+
+  <ion-card *ngFor="let item of imageList">
+    <img img src="{{item.image}}"/>
+  </ion-card>
+
 </ion-content>
